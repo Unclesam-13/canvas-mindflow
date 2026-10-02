@@ -1,10 +1,39 @@
 # Canvas Mindflow
 
-> 划线追问的 AI 学习对话插件 · An Obsidian plugin for highlight-to-ask AI study chats
+> 用 AI 学习一切内容 —— 看不懂的地方随时划线追问，让每一次提问都长成一棵可以回顾的知识树。
+>
+> An Obsidian plugin for learning anything with AI: highlight what you don't understand, ask right there, and keep every answer in a reviewable tree.
 
-读 AI 的回答时，哪里看不懂就**划线追问**：追问以卡片堆叠在右侧，可以无限展开成一棵问答树；还可以对划线写**想法笔记**、把问答放进**多级收藏夹**、一键生成 **Canvas 总览图**。支持 Windows / macOS / Linux 桌面端，以及安卓、iPhone / iPad 上的 Obsidian。
+## 为什么做这个插件
 
-*English: Ask an AI, highlight anything you don't understand to branch a follow-up, and keep exploring as a tree. Includes highlight notes, nested favorites, image/PDF attachments, preset follow-up questions and Canvas overviews. Works with any OpenAI-compatible API (DeepSeek, OpenAI, Kimi, Qwen, GLM, SiliconFlow, OpenRouter, Ollama…). UI is in Chinese.*
+用 AI 学东西时，几乎每个人都遇到过这样的情况：
+
+AI 给了一大段回答，其中有个概念看不懂。现在的 AI 问答几乎都是**一个对话框从头聊到尾**，你只有两个选择：
+
+- **新开一个对话**去问 —— 上下文断了，还要重新交代背景，问完再切回来；
+- **在回答下面接着问** —— 问一个、再问一个、再追问一个……几轮之后，最开始那份回答早已被淹没在聊天记录里，想回头看都得翻半天。
+
+学习本来是一个**发散又回收**的过程：读到不懂的地方岔出去弄明白，再回到主线继续。可线性的聊天框只能一路往下堆，问得越多，思路越乱，知识也越难沉淀。
+
+**Canvas Mindflow 就是为了解决这个痛点而做的。** 它让提问可以在任何位置「中途分岔」：
+
+- 在回答里**划出看不懂的那句话**直接追问，追问在旁边单独展开，**主回答原封不动**留在原处；
+- 追问里还有不懂的，可以继续划线，**一层层往下深挖**，不会把主线弄乱；
+- 所有问答自动组织成一棵**问答树**，原文里的高亮就是入口，随时跳回来、跳过去；
+- 一路的探索最终变成一套**有结构的回答体系**：可以写想法笔记、收藏、生成 Canvas 全景图，日后**完整回顾**当时是怎么一步步学懂的。
+
+不论是读论文、啃教材、学编程、准备考试，还是单纯想把一个问题弄透，它都能让 AI 成为一位可以随时打断、反复追问、而且帮你把笔记整理好的老师。
+
+支持 Windows / macOS / Linux 桌面端，以及安卓、iPhone / iPad 上的 Obsidian；兼容所有 OpenAI 格式的 AI 服务（DeepSeek、OpenAI、Kimi、通义千问、智谱、硅基流动、OpenRouter、Ollama 等）。
+
+<details>
+<summary>English</summary>
+
+Most AI chat apps are a single linear thread. When part of an answer doesn't make sense, you either open a new chat (and lose the context) or keep asking below it — and after a few rounds the original answer is buried and hard to find again.
+
+Canvas Mindflow lets you branch **in the middle** of an answer: highlight the sentence you don't understand and ask about it right there. The follow-up opens beside the original, which stays intact. Follow-ups can be branched again, and everything is organized into a navigable Q&A tree with highlights as entry points. Add your own notes, favorite answers, attach images/PDFs, and export the whole exploration to an Obsidian Canvas — so you can always go back and review how you came to understand something. Works with any OpenAI-compatible API. The UI is in Chinese.
+
+</details>
 
 ## 功能一览
 

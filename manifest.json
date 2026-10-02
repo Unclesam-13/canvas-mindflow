@@ -3,7 +3,7 @@
   "name": "Canvas Mindflow",
   "version": "0.10.0",
   "minAppVersion": "1.5.0",
-  "description": "划线追问的 AI 学习对话：主窗口提问，看不懂就划线追问，追问以卡片堆叠在右侧并可无限展开；问答树定位、一键生成 Canvas 总览图；也支持直接在 Canvas 卡片里对话。",
+  "description": "用 AI 学习一切内容：回答里看不懂就划线追问，追问在旁边展开、主回答不被淹没，所有问答自动形成可回顾的问答树；支持想法笔记、收藏夹、图片/PDF 附件和 Canvas 总览图。",
   "author": "stevenliu",
   "isDesktopOnly": false,
   "authorUrl": "https://github.com/Unclesam-13"
