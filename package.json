@@ -1,0 +1,11 @@
+{
+  "name": "canvas-mindflow",
+  "version": "0.10.0",
+  "description": "Obsidian plugin: highlight-to-ask AI study chat with branching follow-ups, notes, favorites and Canvas overviews.",
+  "private": true,
+  "scripts": {
+    "build": "sh build.sh",
+    "test": "sh build.sh && node test/run.js"
+  },
+  "license": "MIT"
+}

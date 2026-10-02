@@ -1,0 +1,41 @@
+# 推送形如 0.10.0 的 tag 时：运行测试 → 构建 main.js → 创建 GitHub Release（附带 main.js / manifest.json / styles.css 和安装包 zip）
+name: Release
+
+on:
+  push:
+    tags:
+      - "*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Build & test
+        run: |
+          sh build.sh
+          node test/run.js
+      - name: Check tag matches manifest version
+        run: |
+          V=$(node -p "require('./manifest.json').version")
+          if [ "$V" != "${GITHUB_REF_NAME}" ]; then echo "tag ${GITHUB_REF_NAME} != manifest version $V"; exit 1; fi
+      - name: Package
+        run: |
+          mkdir -p dist/canvas-mindflow
+          cp main.js manifest.json styles.css dist/canvas-mindflow/
+          cd dist && zip -r canvas-mindflow-${GITHUB_REF_NAME}.zip canvas-mindflow
+      - uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ github.ref_name }}
+          generate_release_notes: true
+          files: |
+            main.js
+            manifest.json
+            styles.css
+            dist/canvas-mindflow-${{ github.ref_name }}.zip

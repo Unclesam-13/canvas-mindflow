@@ -1,0 +1,20 @@
+const Module=require('module');const orig=Module._load;
+Module._load=function(r,...a){ if(r==='obsidian') return {Plugin:class{},PluginSettingTab:class{},Setting:class{},Notice:class{},ItemView:class{},Modal:class{},Component:class{},requestUrl:()=>{},normalizePath:x=>x}; return orig.call(this,r,...a);};
+global.window={};
+const assert=require('assert');
+const {NoteStore}=require(require('path').join(__dirname,'..','main.js'))._notes;
+const files={};
+const adapter={exists:async p=>p in files,read:async p=>files[p],write:async(p,c)=>{files[p]=c},mkdir:async()=>{}};
+const chat={app:{vault:{adapter}},store:{folder:()=>'Mindflow',ensureDir:async()=>{}}};
+(async()=>{
+ const ns=new NoteStore(chat); await ns.load();
+ const A=ns.addFolder('线代'),B=ns.addFolder('SVD',A.id);
+ const n1=ns.addNote({folderId:B.id,sessionId:'S',nodeId:'N',msgId:'M',anchor:{text:'$U$ 是正交矩阵'},content:'想法'});
+ const n2=ns.addNote({sessionId:'S',nodeId:'N',msgId:'M',anchor:{text:'x'},content:''});
+ assert.equal(ns.list('all').length,2); assert.equal(ns.list('none').length,1); assert.equal(ns.list(A.id).length,1);
+ assert.equal(ns.notesOn('S','N','M').length,2);
+ ns.updateNote(n2.id,{content:'b'}); assert.equal(ns.note(n2.id).content,'b');
+ ns.removeFolder(A.id); assert.equal(ns.data.folders.length,0); assert.equal(ns.list('none').length,2);
+ await ns.save(true); assert.ok(files['Mindflow/想法笔记.json']);
+ console.log('NOTES OK');
+})().catch(e=>{console.error(e);process.exit(1)});
