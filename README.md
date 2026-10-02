@@ -2,7 +2,7 @@
 
 > 划线追问的 AI 学习对话插件 · An Obsidian plugin for highlight-to-ask AI study chats
 
-读 AI 的回答时，哪里看不懂就**划线追问**：追问以卡片堆叠在右侧，可以无限展开成一棵问答树；还可以对划线写**想法笔记**、把问答放进**多级收藏夹**、一键生成 **Canvas 总览图**。支持桌面端和移动端（已在安卓上使用）。
+读 AI 的回答时，哪里看不懂就**划线追问**：追问以卡片堆叠在右侧，可以无限展开成一棵问答树；还可以对划线写**想法笔记**、把问答放进**多级收藏夹**、一键生成 **Canvas 总览图**。支持 Windows / macOS / Linux 桌面端，以及安卓、iPhone / iPad 上的 Obsidian。
 
 *English: Ask an AI, highlight anything you don't understand to branch a follow-up, and keep exploring as a tree. Includes highlight notes, nested favorites, image/PDF attachments, preset follow-up questions and Canvas overviews. Works with any OpenAI-compatible API (DeepSeek, OpenAI, Kimi, Qwen, GLM, SiliconFlow, OpenRouter, Ollama…). UI is in Chinese.*
 
@@ -29,6 +29,15 @@
 ### 方式二：用 BRAT 安装（自动更新）
 
 安装 [BRAT](https://github.com/TfTHacker/obsidian42-brat) 插件 → `Add Beta plugin` → 填入 `Unclesam-13/canvas-mindflow`。
+
+### 方式三：iPhone / iPad
+
+插件本身不分平台，iOS 上的 Obsidian 直接用同一个插件（`manifest.json` 里 `isDesktopOnly: false`）。iOS 的「文件」App 默认看不到 `.obsidian` 隐藏文件夹，推荐下面两种装法：
+
+- **BRAT（推荐）**：在 iOS 的 Obsidian 里：设置 → 第三方插件 → 关闭安全模式 → 浏览 → 搜索安装 **BRAT** 并启用 → BRAT 设置里 `Add Beta plugin` → 填 `Unclesam-13/canvas-mindflow` → 回到第三方插件列表启用 **Canvas Mindflow**。以后有新版本 BRAT 会自动更新。
+- **同步过去**：如果库是用 iCloud、Obsidian Sync 或 Remotely Save 等同步的，先在电脑上装好插件，确认同步设置里包含「插件」/ `.obsidian` 文件夹，iOS 端同步后在第三方插件里启用即可。
+
+iOS 上的用法和安卓一样：单栏 + 左右抽屉，长按选字后底部出现「追问 | 笔记 | 复制」，📎 可以从相册或「文件」里添加图片和 PDF。
 
 ### 配置
 
